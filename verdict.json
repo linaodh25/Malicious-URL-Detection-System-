@@ -1,0 +1,15 @@
+{
+  "url": "https://claude.ai",
+  "verdict": "SUSPICIOUS",
+  "score": 35,
+  "score_breakdown": {
+    "threat_intel": 15,
+    "heuristics": 20
+  },
+  "reasons": [
+    "AbuseIPDB: IP 160.79.104.10 is suspicious (score=39/100)",
+    "Redirect chain of 4 hops detected",
+    "Cookies set without 'Secure' flag: ['_dd_s', '__ssid']"
+  ],
+  "analyzed_at": "2026-04-29T07:27:13.558885Z"
+}

@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malicious URL Sandbox</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<input id="urlInput" type="text" placeholder="Enter URL to scan" />
+<button id="scanBtn" onclick="scanURL()">Scan</button>
+<div id="result"></div>
+<style>
+  :root {
+    --bg: #080d14;
+    --bg2: #0d1520;
+    --card: #111b28;
+    --card2: #162030;
+    --border: #1e3045;
+    --text: #e8f0f8;
+    --muted: #5a7a9a;
+    --accent: #00e5b8;
+    --red: #ff4a4a;
+    --red-glow: rgba(255,74,74,0.35);
+    --yellow: #ffc14a;
+    --yellow-glow: rgba(255,193,74,0.3);
+    --green: #00e57a;
+    --green-glow: rgba(0,229,122,0.3);
+    --accent-glow: rgba(0,229,184,0.25);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── HEX GRID BACKGROUND ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(ellipse 60% 50% at 50% 0%, rgba(0,229,184,0.06) 0%, transparent 70%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpolygon points='28,2 54,16 54,44 28,58 2,44 2,16' fill='none' stroke='%23152030' stroke-width='1'/%3E%3Cpolygon points='28,52 54,66 54,94 28,108 2,94 2,66' fill='none' stroke='%23152030' stroke-width='1'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── PAGES ── */
+  .page { display: none; position: relative; z-index: 1; }
+  .page.active { display: flex; }
+
+  /* ── HOME PAGE ── */
+  #page-home {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .logo-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(0,229,184,0.08);
+    border: 1px solid rgba(0,229,184,0.2);
+    border-radius: 100px;
+    padding: 0.35rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 2rem;
+    animation: fadeDown 0.6s ease both;
+  }
+  .logo-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--accent);
+    animation: pulse 2s infinite;
+  }
+
+  #page-home h1 {
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    animation: fadeDown 0.7s 0.1s ease both;
+  }
+  #page-home h1 span { color: var(--accent); }
+
+  #page-home p {
+    color: var(--muted);
+    font-size: 1.05rem;
+    font-weight: 300;
+    margin-bottom: 3rem;
+    animation: fadeDown 0.7s 0.2s ease both;
+  }
+
+  .input-wrap {
+    width: 100%;
+    max-width: 640px;
+    animation: fadeUp 0.7s 0.3s ease both;
+  }
+
+  .url-input {
+    width: 100%;
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    padding: 1.1rem 1.5rem;
+    color: var(--text);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    margin-bottom: 1rem;
+  }
+  .url-input::placeholder { color: var(--muted); }
+  .url-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(0,229,184,0.12), inset 0 0 20px rgba(0,229,184,0.03);
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--accent);
+    color: #050d14;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    padding: 0.9rem 2.2rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s, opacity 0.2s;
+    box-shadow: 0 0 24px rgba(0,229,184,0.35);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 32px rgba(0,229,184,0.5);
+  }
+  .btn-primary:active { transform: translateY(0); }
+
+  .feature-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeUp 0.7s 0.5s ease both;
+  }
+  .feature-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: var(--muted);
+    font-size: 0.82rem;
+    font-weight: 400;
+  }
+  .feature-chip svg { color: var(--accent); }
+
+  /* ── ANALYZE PAGE ── */
+  #page-analyze {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .spinner-wrap {
+    position: relative;
+    width: 120px;
+    height: 120px;
+  }
+  .spinner-wrap svg {
+    position: absolute;
+    inset: 0;
+    animation: spin 1.4s linear infinite;
+  }
+  .spinner-inner {
+    position: absolute;
+    inset: 16px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,229,184,0.08) 0%, transparent 70%);
+    box-shadow: inset 0 0 24px rgba(0,229,184,0.15);
+  }
+
+  .analyze-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    text-align: left;
+  }
+  .step {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+    transition: color 0.4s;
+  }
+  .step.done { color: var(--accent); }
+  .step.active { color: var(--text); }
+  .step-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--border);
+    flex-shrink: 0;
+    transition: background 0.4s, box-shadow 0.4s;
+  }
+  .step.done .step-dot { background: var(--accent); box-shadow: 0 0 8px var(--accent); }
+  .step.active .step-dot { background: var(--accent); animation: pulse 1s infinite; }
+
+  /* ── RESULT PAGE ── */
+  #page-result {
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 3rem 1.5rem;
+    gap: 0;
+  }
+
+  .result-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: fadeDown 0.6s ease both;
+  }
+
+  .verdict-ring {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 1.5rem;
+  }
+  .verdict-ring svg {
+    position: absolute;
+    inset: 0;
+    transform: rotate(-90deg);
+  }
+  .verdict-ring svg circle.track {
+    fill: none;
+    stroke: var(--card2);
+    stroke-width: 6;
+  }
+  .verdict-ring svg circle.arc {
+    fill: none;
+    stroke-width: 6;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1.2s cubic-bezier(.4,0,.2,1);
+  }
+  .verdict-inner {
+    position: absolute;
+    inset: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .verdict-label {
+    font-weight: 900;
+    font-size: 1.15rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .risk-score {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+  .risk-score span { font-weight: 900; font-size: 1.8rem; }
+  .result-url-display {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+    word-break: break-all;
+    max-width: 480px;
+  }
+
+  /* Cards */
+  .result-card {
+    width: 100%;
+    max-width: 520px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+  .result-card h3 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .summary-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.9rem;
+  }
+  .summary-row:last-child { border-bottom: none; }
+  .row-icon {
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+    color: var(--muted);
+  }
+  .row-label { color: var(--muted); flex: 1; }
+  .row-value { font-weight: 600; text-align: right; }
+
+  .tag {
+    display: inline-block;
+    padding: 0.15rem 0.55rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+  .tag-red { background: rgba(255,74,74,0.15); color: var(--red); border: 1px solid rgba(255,74,74,0.25); }
+  .tag-yellow { background: rgba(255,193,74,0.12); color: var(--yellow); border: 1px solid rgba(255,193,74,0.2); }
+  .tag-green { background: rgba(0,229,122,0.12); color: var(--green); border: 1px solid rgba(0,229,122,0.2); }
+  .tag-muted { background: rgba(90,122,154,0.12); color: var(--muted); border: 1px solid var(--border); }
+
+  /* Technical details accordion */
+  .accordion {
+    width: 100%;
+    max-width: 520px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.6s 0.35s ease both;
+    overflow: hidden;
+  }
+  .accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 1.5rem;
+    cursor: pointer;
+    user-select: none;
+  }
+  .accordion-header span {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .chevron {
+    color: var(--muted);
+    transition: transform 0.3s;
+  }
+  .accordion.open .chevron { transform: rotate(180deg); }
+  .accordion-body {
+    display: none;
+    padding: 0 1.5rem 1.2rem;
+    border-top: 1px solid var(--border);
+  }
+  .accordion.open .accordion-body { display: block; }
+  .tech-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.55rem 0;
+    font-size: 0.83rem;
+    border-bottom: 1px solid rgba(30,48,69,0.5);
+  }
+  .tech-row:last-child { border-bottom: none; }
+  .tech-label { color: var(--muted); font-family: 'Space Mono', monospace; font-size: 0.77rem; }
+  .tech-val { font-weight: 600; font-size: 0.83rem; }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: var(--accent);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.85rem 2rem;
+    border: 1.5px solid rgba(0,229,184,0.4);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+    animation: fadeUp 0.6s 0.5s ease both;
+    margin-bottom: 3rem;
+  }
+  .btn-secondary:hover {
+    background: rgba(0,229,184,0.08);
+    border-color: var(--accent);
+    box-shadow: 0 0 20px rgba(0,229,184,0.2);
+  }
+
+  /* ── COLOR VARIANTS ── */
+  body[data-verdict="malicious"] {
+    --verdict-color: var(--red);
+    --verdict-glow: var(--red-glow);
+  }
+  body[data-verdict="suspicious"] {
+    --verdict-color: var(--yellow);
+    --verdict-glow: var(--yellow-glow);
+  }
+  body[data-verdict="clean"] {
+    --verdict-color: var(--green);
+    --verdict-glow: var(--green-glow);
+  }
+
+  /* ── KEYFRAMES ── */
+  @keyframes fadeDown {
+    from { opacity:0; transform:translateY(-18px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  @keyframes fadeUp {
+    from { opacity:0; transform:translateY(18px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  @keyframes pulse {
+    0%,100% { opacity:1; }
+    50% { opacity:0.4; }
+  }
+  @keyframes ringDraw {
+    from { stroke-dashoffset: 408; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 1 — HOME
+════════════════════════════════════════════ -->
+<div id="page-home" class="page active">
+  <div class="logo-badge">Secure Sandbox v2.4</div>
+
+  <h1>Malicious URL<br><span>Sandbox</span></h1>
+  <p>Safely analyze suspicious URLs in an isolated environment</p>
+
+  <div class="input-wrap">
+    <button class="btn-primary" onclick="startAnalysis()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      Analyze URL
+    </button>
+  </div>
+
+  <div class="feature-row">
+    <span class="feature-chip">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Isolated environment
+    </span>
+    <span class="feature-chip">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      Behavior monitoring
+    </span>
+    <span class="feature-chip">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      Domain reputation
+    </span>
+    <span class="feature-chip">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      SSL/TLS inspection
+    </span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE 2 — ANALYZING
+════════════════════════════════════════════ -->
+<div id="page-analyze" class="page">
+  <div class="spinner-wrap">
+    <div class="spinner-inner"></div>
+    <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="60" cy="60" r="50" fill="none" stroke="#1e3045" stroke-width="6"/>
+      <circle cx="60" cy="60" r="50" fill="none" stroke="var(--accent)" stroke-width="6"
+        stroke-linecap="round" stroke-dasharray="314" stroke-dashoffset="78"/>
+    </svg>
+  </div>
+
+  <div>
+    <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:0.4rem;">Analyzing URL…</h2>
+    <p style="color:var(--muted);font-size:0.9rem;font-family:'Space Mono',monospace;" id="analyze-url-display"></p>
+  </div>
+
+  <div class="analyze-steps" id="step-list">
+    <div class="step active" id="step-0">
+      <span class="step-dot"></span> Resolving domain &amp; DNS records
+    </div>
+    <div class="step" id="step-1">
+      <span class="step-dot"></span> Opening in secure sandbox
+    </div>
+    <div class="step" id="step-2">
+      <span class="step-dot"></span> Monitoring network behavior
+    </div>
+    <div class="step" id="step-3">
+      <span class="step-dot"></span> Scanning for malware signatures
+    </div>
+    <div class="step" id="step-4">
+      <span class="step-dot"></span> Checking domain reputation
+    </div>
+    <div class="step" id="step-5">
+      <span class="step-dot"></span> Generating threat report
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE 3 — RESULT
+════════════════════════════════════════════ -->
+<div id="page-result" class="page">
+
+  <div class="result-header">
+    <div class="verdict-ring" id="verdict-ring">
+      <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+        <circle class="track" cx="80" cy="80" r="65"/>
+        <circle class="arc" id="arc-circle" cx="80" cy="80" r="65"
+          stroke-dasharray="408" stroke-dashoffset="408"/>
+      </svg>
+      <div class="verdict-inner" id="verdict-inner">
+        <span class="verdict-label" id="verdict-label-text">–</span>
+      </div>
+    </div>
+
+    <div class="risk-score">Risk Score: <span id="score-display">–</span>/100</div>
+    <div class="result-url-display" id="result-url-display"></div>
+  </div>
+
+  <div class="result-card" id="summary-card">
+    <h3>Analysis Summary</h3>
+    <div id="summary-rows"></div>
+  </div>
+
+  <div class="accordion" id="tech-accordion">
+    <div class="accordion-header" onclick="toggleAccordion()">
+      <span>Technical Details</span>
+      <svg class="chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="accordion-body" id="tech-body"></div>
+  </div>
+
+  <button class="btn-secondary" onclick="goHome()">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+    Analyze Another URL
+  </button>
+
+</div>
+
+<script>
+/* ─── DATA ─────────────────────────────────────────── */
+const SCENARIOS = {
+  malicious: {
+    verdict: 'MALICIOUS',
+    score: 92,
+    color: '#ff4a4a',
+    glow: 'rgba(255,74,74,0.35)',
+    summary: [
+      { icon:'🦠', label:'Malware Detected', value:'3 (Win.Trojan.Generic)', cls:'tag-red' },
+      { icon:'🎣', label:'Phishing Indicators', value:'High — Credential harvesting', cls:'tag-red' },
+      { icon:'🌐', label:'Domain Reputation',  value:'Poor — Known malicious actor', cls:'tag-red' },
+      { icon:'⚠️', label:'Threat Level',       value:'Critical', cls:'tag-red' },
+      { icon:'💉', label:'Threat Type',        value:'Drive-by Download', cls:'tag-red' },
+    ],
+    tech: [
+      { label:'IP Address',      val:'185.220.101.47' },
+      { label:'Hosting Country', val:'RU' },
+      { label:'SSL Issuer',      val:'Self-signed (expired)' },
+      { label:'Redirects',       val:'7 (4 suspicious)' },
+      { label:'JS Obfuscation',  val:'Detected' },
+      { label:'C2 Beacons',      val:'3 outbound' },
+    ]
+  },
+  suspicious: {
+    verdict: 'SUSPICIOUS',
+    score: 58,
+    color: '#ffc14a',
+    glow: 'rgba(255,193,74,0.3)',
+    summary: [
+      { icon:'↗️', label:'Redirects',           value:'4 (2 Suspicious)', cls:'tag-yellow' },
+      { icon:'🌐', label:'External Domains',    value:'12 (5 Low Reputation)', cls:'tag-yellow' },
+      { icon:'🛡️', label:'Suspicious Behaviors',value:'3 (Phishing Patterns)', cls:'tag-yellow' },
+      { icon:'🔒', label:'SSL/TLS',             value:'Valid, but Self-Signed', cls:'tag-yellow' },
+    ],
+    tech: [
+      { label:'IP Address',       val:'104.26.12.89' },
+      { label:'Hosting Country',  val:'US' },
+      { label:'SSL Issuer',       val:'Self-signed' },
+      { label:'Redirects',        val:'4' },
+      { label:'JS Obfuscation',   val:'Partial' },
+      { label:'Known Blacklists', val:'0 / 45' },
+    ]
+  },
+  clean: {
+    verdict: 'CLEAN',
+    score: 12,
+    color: '#00e57a',
+    glow: 'rgba(0,229,122,0.3)',
+    summary: [
+      { icon:'↗️', label:'Redirects',            value:'0', cls:'tag-green' },
+      { icon:'🌐', label:'External Domains',     value:'2', cls:'tag-green' },
+      { icon:'🛡️', label:'Suspicious Behaviors', value:'None detected', cls:'tag-green' },
+    ],
+    tech: [
+      { label:'IP Address',       val:'151.101.1.195' },
+      { label:'Hosting Country',  val:'US' },
+      { label:'SSL Issuer',       val:'Let\'s Encrypt' },
+      { label:'Redirects',        val:'0' },
+      { label:'JS Obfuscation',   val:'None' },
+      { label:'Known Blacklists', val:'0 / 45' },
+    ]
+  }
+};
+
+/* ─── DEMO: pick result based on URL keyword ─────── */
+function pickScenario(url) {
+  const u = url.toLowerCase();
+  if (!url || u === '' || u.includes('clean') || u.includes('google') || u.includes('github'))
+    return 'clean';
+  if (u.includes('suspicious') || u.includes('weird') || u.includes('redirect'))
+    return 'suspicious';
+  return 'malicious'; // default for demo
+}
+
+let currentUrl = '';
+
+function startAnalysis() {
+  const input = document.getElementById('urlInput').value.trim();
+  currentUrl = input || 'https://demo-url-sandbox.io/scan';
+  document.getElementById('analyze-url-display').textContent = currentUrl;
+  showPage('page-analyze');
+  runSteps();
+}
+
+function runSteps() {
+  const steps = document.querySelectorAll('.analyze-steps .step');
+  let i = 0;
+  function next() {
+    if (i > 0) steps[i-1].classList.replace('active','done');
+    if (i < steps.length) {
+      steps[i].classList.add('active');
+      i++;
+      setTimeout(next, 520 + Math.random()*280);
+    } else {
+      setTimeout(() => showResult(pickScenario(currentUrl)), 400);
+    }
+  }
+  // reset
+  steps.forEach(s => { s.className = 'step'; });
+  next();
+}
+
+function showResult(scenarioKey) {
+  const s = SCENARIOS[scenarioKey];
+  document.body.setAttribute('data-verdict', scenarioKey);
+
+  // Verdict ring
+  const arc = document.getElementById('arc-circle');
+  arc.style.stroke = s.color;
+  const inner = document.getElementById('verdict-inner');
+  inner.style.background = `radial-gradient(circle, ${s.glow} 0%, transparent 70%)`;
+  inner.style.boxShadow = `inset 0 0 30px ${s.glow}`;
+  document.getElementById('verdict-label-text').textContent = s.verdict;
+  document.getElementById('verdict-label-text').style.color = s.color;
+
+  // Score
+  document.getElementById('score-display').textContent = s.score;
+  document.getElementById('score-display').style.color = s.color;
+  document.getElementById('result-url-display').textContent = currentUrl;
+
+  // Summary card border
+  document.getElementById('summary-card').style.borderColor = `${s.color}33`;
+
+  // Summary rows
+  const rowsEl = document.getElementById('summary-rows');
+  rowsEl.innerHTML = s.summary.map(r => `
+    <div class="summary-row">
+      <span class="row-icon">${r.icon}</span>
+      <span class="row-label">${r.label}</span>
+      <span class="row-value"><span class="tag ${r.cls}">${r.value}</span></span>
+    </div>
+  `).join('');
+
+  // Tech details
+  const techEl = document.getElementById('tech-body');
+  techEl.innerHTML = s.tech.map(t => `
+    <div class="tech-row">
+      <span class="tech-label">${t.label}</span>
+      <span class="tech-val">${t.val}</span>
+    </div>
+  `).join('');
+
+  showPage('page-result');
+
+  // Animate arc
+  const circumference = 408;
+  const offset = circumference - (s.score / 100) * circumference;
+  setTimeout(() => {
+    arc.style.transition = 'stroke-dashoffset 1.2s cubic-bezier(.4,0,.2,1)';
+    arc.style.strokeDashoffset = offset;
+  }, 120);
+}
+
+function toggleAccordion() {
+  document.getElementById('tech-accordion').classList.toggle('open');
+}
+
+function goHome() {
+  document.body.removeAttribute('data-verdict');
+  document.getElementById('arc-circle').style.strokeDashoffset = 408;
+  document.getElementById('arc-circle').style.transition = 'none';
+  document.getElementById('tech-accordion').classList.remove('open');
+  // reset steps
+  document.querySelectorAll('.analyze-steps .step').forEach(s => s.className = 'step');
+  document.getElementById('urlInput').value = '';
+  showPage('page-home');
+}
+
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+// Allow Enter key
+document.getElementById('urlInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter') startAnalysis();
+});
+
+
+async function scanURL() {
+    const url = document.getElementById("urlInput").value;
+    
+    if (!url) {
+        alert("Please enter a URL!");
+        return;
+    }
+    
+    // Show loading state
+    document.getElementById("result").innerHTML = "⏳ Scanning...";
+    document.getElementById("scanBtn").disabled = true;
+    
+    try {
+        const response = await fetch("/scan", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({url: url})
+        });
+        
+        const data = await response.json();
+        displayResults(data);
+        
+    } catch (error) {
+        document.getElementById("result").innerHTML = 
+            `❌ Error: ${error.message}`;
+    } finally {
+        document.getElementById("scanBtn").disabled = false;
+    }
+}
+
+function displayResults(data) {
+    const verdict = data.verdict;
+    const evidence = data.evidence;
+    
+    // Color based on verdict
+    const colors = {
+        "CLEAN": "green",
+        "SUSPICIOUS": "orange", 
+        "MALICIOUS": "red"
+    };
+    
+    const color = colors[verdict.verdict] || "gray";
+    
+    document.getElementById("result").innerHTML = `
+        <div style="color: ${color}; font-size: 24px; font-weight: bold;">
+            ${verdict.verdict} (${verdict.score}/100)
+        </div>
+        <div><strong>URL:</strong> ${verdict.url}</div>
+        <div><strong>Reasons:</strong>
+            <ul>
+                ${verdict.reasons.map(r => `<li>${r}</li>`).join("")}
+            </ul>
+        </div>
+        <div><strong>Requests captured:</strong> ${evidence.requests?.length || 0}</div>
+        <div><strong>Has TLS:</strong> ${evidence.tls_info?.has_tls ? "✅" : "❌"}</div>
+        <img src="/screenshot" style="max-width:400px; margin-top:10px;" />
+    `;
+}
+
+</script>
+</body>
+</html>
+
+

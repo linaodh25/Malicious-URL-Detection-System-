@@ -1,0 +1,14 @@
+{
+  "url": "https://brunovcg.github.io/Netflix-login-page-clone",
+  "verdict": "SUSPICIOUS",
+  "score": 55,
+  "score_breakdown": {
+    "threat_intel": 55,
+    "heuristics": 0
+  },
+  "reasons": [
+    "VirusTotal: 16 engines flagged domain 'brunovcg.github.io' as malicious",
+    "AbuseIPDB: IP 185.199.109.153 is suspicious (score=32/100)"
+  ],
+  "analyzed_at": "2026-05-02T15:05:23.366666Z"
+}

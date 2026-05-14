@@ -1,0 +1,87 @@
+{
+    "url": "https://brunovcg.github.io/Netflix-login-page-clone",
+    "final_url": "https://brunovcg.github.io/Netflix-login-page-clone/?email=&password=",
+    "redirect_chain": [
+        "https://brunovcg.github.io/Netflix-login-page-clone",
+        "https://brunovcg.github.io/Netflix-login-page-clone/?email=&password="
+    ],
+    "requests": [
+        {
+            "url": "https://brunovcg.github.io/Netflix-login-page-clone",
+            "type": "document",
+            "status": 301,
+            "ip": "185.199.109.153"
+        },
+        {
+            "url": "https://brunovcg.github.io/Netflix-login-page-clone/",
+            "type": "document",
+            "status": 200,
+            "ip": "185.199.109.153"
+        },
+        {
+            "url": "https://brunovcg.github.io/Netflix-login-page-clone/css/style.css",
+            "type": "stylesheet",
+            "status": 200,
+            "ip": "185.199.109.153"
+        },
+        {
+            "url": "https://brunovcg.github.io/Netflix-login-page-clone/img/logo.svg",
+            "type": "image",
+            "status": 200,
+            "ip": "185.199.109.153"
+        },
+        {
+            "url": "https://brunovcg.github.io/Netflix-login-page-clone/img/background.jpg",
+            "type": "image",
+            "status": 200,
+            "ip": "185.199.109.153"
+        },
+        {
+            "url": "https://brunovcg.github.io/Netflix-login-page-clone/?email=&password=",
+            "type": "document",
+            "status": 200,
+            "ip": "185.199.109.153"
+        },
+        {
+            "url": "https://brunovcg.github.io/Netflix-login-page-clone/css/style.css",
+            "type": "stylesheet",
+            "status": null,
+            "ip": "185.199.109.153"
+        },
+        {
+            "url": "https://brunovcg.github.io/Netflix-login-page-clone/img/logo.svg",
+            "type": "image",
+            "status": null,
+            "ip": "185.199.109.153"
+        },
+        {
+            "url": "https://brunovcg.github.io/Netflix-login-page-clone/img/background.jpg",
+            "type": "image",
+            "status": null,
+            "ip": "185.199.109.153"
+        }
+    ],
+    "js_events": {
+        "eval_calls": [
+            "() => {\n                    window.__spy_reading = true;\n                    const data = {\n                        eval_calls:       window.__spy.eval_calls,\n                        dom_writes:       window.__spy.dom_writes,\n                        popups:           window.__spy.popups,\n                        form_submissions: window.__spy.form_submissions,\n                    };\n                    window.__spy_reading = false;\n                    return data;\n                }"
+        ],
+        "dom_writes": [],
+        "popups": [],
+        "form_submissions": []
+    },
+    "tls_info": {
+        "has_tls": true,
+        "certificate_valid": true,
+        "issuer": "Let's Encrypt"
+    },
+    "cookies": [],
+    "downloaded_files": [],
+    "page_title": "Netflix",
+    "screenshot": "shot.png",
+    "scan_duration": 14.47,
+    "meta": {
+        "sandbox_id": "sandbox-071f1561",
+        "scan_timestamp": "2026-05-02T15:05:18.403637+00:00",
+        "sandbox_exited_cleanly": true
+    }
+}

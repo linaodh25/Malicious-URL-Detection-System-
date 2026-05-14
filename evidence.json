@@ -1,0 +1,1521 @@
+{
+    "url": "https://github.com/nicowillis/documents/raw/master/sample.zip",
+    "final_url": "https://github.com/",
+    "redirect_chain": [
+        "https://github.com/"
+    ],
+    "requests": [
+        {
+            "url": "https://github.com/nicowillis/documents/raw/master/sample.zip",
+            "type": "document",
+            "status": 404,
+            "ip": "140.82.121.3"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/global-banner-disable-c5d230875ac0a28a.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/MonaSansVF-wdth-wght-opsz-902d64c7ad02.woff2",
+            "type": "font",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/light-8db8ec9d843a6198.css",
+            "type": "stylesheet",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/light_high_contrast-1ebc8c2fbf646f62.css",
+            "type": "stylesheet",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/dark-5a2079a7af880b5d.css",
+            "type": "stylesheet",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/dark_high_contrast-f22f15c407d6eca1.css",
+            "type": "stylesheet",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/primer-primitives-0f570a01cbe448fb.css",
+            "type": "stylesheet",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/primer-0fcd9af82350aeda.css",
+            "type": "stylesheet",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/global-c9ae636e7affabfe.css",
+            "type": "stylesheet",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/github-c94ab8d1f22049a8.css",
+            "type": "stylesheet",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/high-contrast-cookie-26d6bae49dfd2c29.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/wp-runtime-65c95c8ac8a1a85a.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/fetch-utilities-23fca2e84f65970f.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/85924-e131bec5f99667e1.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/28839-734cb6d8a7150172.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/34646-ea3a02acfb1affb7.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/environment-51c0968cf21c176d.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/runtime-helpers-3bb6f7d6b7a2f531.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/2966-f6796bfd155feae1.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/96232-69d46a31854353d4.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/41013-7a6deee6d6ff15eb.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/51210-3abb7238871a5b29.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/64247-7de91c52a8aca0eb.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/81683-1370179bf9bdc0f0.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/9338-6be513b239268c6e.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/46740-6606b1026a237412.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/53102-7adf5a6968114b74.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/github-elements-f78f5f1cfce010ca.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/element-registry-430031e975b2a42e.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/react-core-18a3c5a721cd6172.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/react-lib-a4cf89fce9a1300a.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/7053-fe40037405b8998b.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/58889-d610f96b052eeec5.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/79039-2565b539a6ebc09b.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/61110-93cf7706e5dc8bfa.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/2887-47ac9a4b8862e6bf.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/26533-4df1172b25427069.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/86483-92f38323ee870655.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/28153-9a1a3fc3bf344626.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/60481-1a8127058c27e9af.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/46287-6c0cfc2c01413513.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/2498-3d75f19334baa301.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/61025-bb3e9d6f928ce438.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/89627-9ab4452238989035.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/79087-311cd6c222a9369e.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/49029-6159bf90b476d32f.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/99328-feb98d72e6134e37.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/behaviors-c72395749ee66f70.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/react-core.3902c02312ea4c60.module.css",
+            "type": "stylesheet",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/4244-d5dcb589fae0ecbf.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/notifications-global-3fa46b9a6c6c431f.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/site-d209faaa96020e85.css",
+            "type": "stylesheet",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/error-9736b9816c3df531.css",
+            "type": "stylesheet",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/primer-react-css.1169a8129575ca06.module.css",
+            "type": "stylesheet",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/keyboard-shortcuts-dialog.ae93bdc5a5edda67.module.css",
+            "type": "stylesheet",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/46752-46c707717fcbe6a9.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/90350-4433d18838554aeb.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/sessions-e74d03d993e84335.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/marketing-navigation.e73a9c6ad3677d4a.module.css",
+            "type": "stylesheet",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-20430-363898fe0a423203.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-30351-a96c50cd39c1e46c.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-51591-a655015837846668.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-34877-fdaec2d7ab775509.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-36423-7610f7b55bc7f34d.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/1337-ae2e2dfbf56d69f2.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/2694-eb7c55471169d0e6.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/50110-4385e3caef0c7e52.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-87740-ca53925defc1fbc0.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-57335-6a74adb4f1e6e7f9.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/55077-7e6ec049c792d791.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-78326-75c5610d70c5d5ec.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-50050-27220c8ab6a21ca6.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-92814-ee86ebdb6128dc4f.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-69038-ede883175639abbd.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/primer-react-6dbbf6a6b62127f5.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/octicons-react-a181826f33dcd4d8.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/89960-8f5b6802e70cd510.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/37869-a873e81f0fcb98e2.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/68751-fe5cb40b5547c377.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/63991-125a5c660965e63e.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/59852-80edf21194f9d3f8.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/41911-85501ec7fd6ae96c.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/38963.f70dfea92b138b01.module.css",
+            "type": "stylesheet",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/71236-ed1398bff632952c.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/28174-86d8b64c92c04430.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/36522-bdd8d55ddb440cb8.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/70168.33bc32a1383dd256.module.css",
+            "type": "stylesheet",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-81053-4b979968b5019472.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-46661-d5d295412f321b1d.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-85825-b95e00c532a6f285.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/appearance-settings.fef6f84625f0c138.module.css",
+            "type": "stylesheet",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/53160-dceea6a389ad9115.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/71849.56ce4fb99933ba04.module.css",
+            "type": "stylesheet",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-lazy-react-partial-appearance-settings-5a2240782ac2c21c.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/15272-00d6ef52b0f88c77.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/61975.8cef654162900584.module.css",
+            "type": "stylesheet",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-61975-89bf2c8790666b8b.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://collector.github.com/github/collect",
+            "type": "ping",
+            "status": 204,
+            "ip": "140.82.113.22"
+        },
+        {
+            "url": "https://api.github.com/_private/browser/stats",
+            "type": "ping",
+            "status": 200,
+            "ip": "140.82.121.6"
+        },
+        {
+            "url": "https://collector.github.com/github/collect",
+            "type": "ping",
+            "status": null,
+            "ip": "140.82.113.22"
+        },
+        {
+            "url": "https://github.com/",
+            "type": "document",
+            "status": 200,
+            "ip": "140.82.121.3"
+        },
+        {
+            "url": "https://collector.github.com/github/collect",
+            "type": "ping",
+            "status": null,
+            "ip": "140.82.113.22"
+        },
+        {
+            "url": "https://collector.github.com/github/collect",
+            "type": "ping",
+            "status": null,
+            "ip": "140.82.113.22"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/global-banner-disable-c5d230875ac0a28a.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/MonaSansVF-wdth-wght-opsz-902d64c7ad02.woff2",
+            "type": "font",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/light-8db8ec9d843a6198.css",
+            "type": "stylesheet",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/light_high_contrast-1ebc8c2fbf646f62.css",
+            "type": "stylesheet",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/dark-5a2079a7af880b5d.css",
+            "type": "stylesheet",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/dark_high_contrast-f22f15c407d6eca1.css",
+            "type": "stylesheet",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/primer-primitives-0f570a01cbe448fb.css",
+            "type": "stylesheet",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/primer-0fcd9af82350aeda.css",
+            "type": "stylesheet",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/global-c9ae636e7affabfe.css",
+            "type": "stylesheet",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/github-c94ab8d1f22049a8.css",
+            "type": "stylesheet",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/site-d209faaa96020e85.css",
+            "type": "stylesheet",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/landing-pages-436ed4646c1b29cd.css",
+            "type": "stylesheet",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/home-afd1bbc5aa3a2088.css",
+            "type": "stylesheet",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/high-contrast-cookie-26d6bae49dfd2c29.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/wp-runtime-65c95c8ac8a1a85a.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/fetch-utilities-23fca2e84f65970f.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/85924-e131bec5f99667e1.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/28839-734cb6d8a7150172.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/34646-ea3a02acfb1affb7.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/environment-51c0968cf21c176d.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/runtime-helpers-3bb6f7d6b7a2f531.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/2966-f6796bfd155feae1.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/96232-69d46a31854353d4.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/41013-7a6deee6d6ff15eb.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/51210-3abb7238871a5b29.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/64247-7de91c52a8aca0eb.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/81683-1370179bf9bdc0f0.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/9338-6be513b239268c6e.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/46740-6606b1026a237412.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/53102-7adf5a6968114b74.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/github-elements-f78f5f1cfce010ca.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/element-registry-430031e975b2a42e.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/react-core-18a3c5a721cd6172.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/react-lib-a4cf89fce9a1300a.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/7053-fe40037405b8998b.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/58889-d610f96b052eeec5.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/79039-2565b539a6ebc09b.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/61110-93cf7706e5dc8bfa.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/2887-47ac9a4b8862e6bf.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/26533-4df1172b25427069.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/86483-92f38323ee870655.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/28153-9a1a3fc3bf344626.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/60481-1a8127058c27e9af.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/46287-6c0cfc2c01413513.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/2498-3d75f19334baa301.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/61025-bb3e9d6f928ce438.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/89627-9ab4452238989035.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/79087-311cd6c222a9369e.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/49029-6159bf90b476d32f.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/99328-feb98d72e6134e37.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/behaviors-c72395749ee66f70.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/react-core.3902c02312ea4c60.module.css",
+            "type": "stylesheet",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/4244-d5dcb589fae0ecbf.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/notifications-global-3fa46b9a6c6c431f.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/10284-f336f9d1cfd275cf.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/22445-5943aa8651cd44ce.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/marketing-essentials-d0af595a13ba1819.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/primer-react-6dbbf6a6b62127f5.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/octicons-react-a181826f33dcd4d8.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/89960-8f5b6802e70cd510.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/37869-a873e81f0fcb98e2.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/68751-fe5cb40b5547c377.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/70641-03dd16cb456c6c48.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/46752-46c707717fcbe6a9.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/3690-545cef02b651ad4d.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/71236-ed1398bff632952c.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/90018-6adf531b7cace6b2.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/48761-4941fce410205fe2.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/18382-3d41da96c8d4b890.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/6572-11890306559fbe43.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/63991-125a5c660965e63e.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/55077-7e6ec049c792d791.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/37826-b3ebde81e7762221.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/28174-86d8b64c92c04430.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/63050-7e43c4b1f07af09a.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/39250-d8a25e2693e66f05.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/49957-8ef3c2c332a87581.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/landing-pages-ad05bc9a09f9f824.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/primer-react-css.1169a8129575ca06.module.css",
+            "type": "stylesheet",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/landing-pages.c83aa3c9e00b01f3.module.css",
+            "type": "stylesheet",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/keyboard-shortcuts-dialog.ae93bdc5a5edda67.module.css",
+            "type": "stylesheet",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/90350-4433d18838554aeb.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/sessions-e74d03d993e84335.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/marketing-navigation.e73a9c6ad3677d4a.module.css",
+            "type": "stylesheet",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/MonaSansMonoVF-wght-04a1e3036ddf.woff2",
+            "type": "font",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/particles-170bd1fd231f4669.png",
+            "type": "image",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://images.ctfassets.net/8aevphvgewt8/g1XhuDG7foMyNWIEIpGJj/b40a790b854d0803704deb7905b1bd82/logo-duolingo-14477f9e54a6.svg",
+            "type": "image",
+            "status": 200,
+            "ip": "18.161.97.52"
+        },
+        {
+            "url": "https://images.ctfassets.net/8aevphvgewt8/6Qr8Snm4JceoMFRJhapgFa/802ded1d2c486a9d0a4c073d9f8f38f4/logo-gartner-aa8c2e452b64.svg",
+            "type": "image",
+            "status": 200,
+            "ip": "18.161.97.52"
+        },
+        {
+            "url": "https://images.ctfassets.net/8aevphvgewt8/1Dt1ncaR6ZM4dQvknFzfBI/e5c2092be5bd53881622eced4fd37564/accordion-1-ce487d44c0bf.webp",
+            "type": "image",
+            "status": 200,
+            "ip": "18.161.97.52"
+        },
+        {
+            "url": "https://images.ctfassets.net/8aevphvgewt8/1uXZYDy7dMcH9QwxuAU06F/1cb167cc60d725b8cf7089faf9a4ed06/accordion-2-730955545f07.webp",
+            "type": "image",
+            "status": 200,
+            "ip": "18.161.97.52"
+        },
+        {
+            "url": "https://images.ctfassets.net/8aevphvgewt8/3xzVZaJhqo3B62R8NeHjX2/e37c81e4f26e9dac2aff1f23a0243087/accordion-3-52ca331d22ea.webp",
+            "type": "image",
+            "status": 200,
+            "ip": "18.161.97.52"
+        },
+        {
+            "url": "https://images.ctfassets.net/8aevphvgewt8/3cgNgdKFqflI27vyDh4Gpa/c459dc8690133e7663b8db2626cf2045/accordion-4-a26744b70ff7.webp",
+            "type": "image",
+            "status": 200,
+            "ip": "18.161.97.52"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-81053-4b979968b5019472.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-30351-a96c50cd39c1e46c.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-51591-a655015837846668.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-34877-fdaec2d7ab775509.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-36423-7610f7b55bc7f34d.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/1337-ae2e2dfbf56d69f2.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/2694-eb7c55471169d0e6.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/50110-4385e3caef0c7e52.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-87740-ca53925defc1fbc0.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-57335-6a74adb4f1e6e7f9.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-78326-75c5610d70c5d5ec.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-93657-0a3e1641ac539397.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-57230-0626107ff5f28ff6.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-50050-27220c8ab6a21ca6.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-92814-ee86ebdb6128dc4f.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-46661-d5d295412f321b1d.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/59852-80edf21194f9d3f8.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/41911-85501ec7fd6ae96c.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/38963.f70dfea92b138b01.module.css",
+            "type": "stylesheet",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/36522-bdd8d55ddb440cb8.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/70168.33bc32a1383dd256.module.css",
+            "type": "stylesheet",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-52864-fc487e9a77505bec.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-68015-68c135393030016b.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/66353-b44748fd4ed05b2c.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-27502-10792c93f5c39568.js",
+            "type": "script",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-85825-b95e00c532a6f285.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/15272-00d6ef52b0f88c77.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/61975.8cef654162900584.module.css",
+            "type": "stylesheet",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/chunk-61975-89bf2c8790666b8b.js",
+            "type": "script",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/cat-53c4522f687c1719.glb",
+            "type": "fetch",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/duck-b3412913788eaa25.glb",
+            "type": "fetch",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/copilot-2addefe0e666acf2.glb",
+            "type": "fetch",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/shield-99c76cd962f04df2.glb",
+            "type": "fetch",
+            "status": 200,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/mascot-7c495cf9822e0d5c.jpg",
+            "type": "image",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/cat_eye-75fdf7af6c5dc157.jpg",
+            "type": "image",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/star-9663b0f4de9d12b1.jpg",
+            "type": "image",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/head_sss-29270cf59da664ea.jpg",
+            "type": "image",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/eye_sss-8e43fcedfb9ddaf9.jpg",
+            "type": "image",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/eye_color-bb27e609004c77cc.jpg",
+            "type": "image",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/body_sss-ecb11ff73d84fd3b.jpg",
+            "type": "image",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/head_sss-b7e053d8d541a414.jpg",
+            "type": "image",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/shield_sss-b8d96cf3572b780d.jpg",
+            "type": "image",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/shield_diffuse-41b84e036ea43614.jpg",
+            "type": "image",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/shield_blur-bd197c0b02963d75.jpg",
+            "type": "image",
+            "status": null,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://github.githubassets.com/assets/code-1_desktop-6d44c7cb53b4aebb.mp4",
+            "type": "media",
+            "status": 206,
+            "ip": "185.199.111.215"
+        },
+        {
+            "url": "https://collector.github.com/github/collect",
+            "type": "ping",
+            "status": null,
+            "ip": "140.82.113.22"
+        }
+    ],
+    "js_events": {
+        "eval_calls": [
+            "() => {\n                    window.__spy_reading = true;\n                    const data = {\n                        eval_calls:       window.__spy.eval_calls,\n                        dom_writes:       window.__spy.dom_writes,\n                        popups:           window.__spy.popups,\n                        form_submissions: window.__spy.form_submissions,\n                    };\n                    window.__spy_reading = false;\n                    return data;\n                }"
+        ],
+        "dom_writes": [],
+        "popups": [],
+        "form_submissions": []
+    },
+    "tls_info": {
+        "has_tls": true,
+        "certificate_valid": true,
+        "issuer": "Sectigo Limited"
+    },
+    "cookies": [
+        {
+            "name": "cpu_bucket",
+            "value": "xlg",
+            "domain": ".github.com",
+            "secure": true
+        },
+        {
+            "name": "preferred_color_mode",
+            "value": "light",
+            "domain": ".github.com",
+            "secure": true
+        },
+        {
+            "name": "tz",
+            "value": "Africa%2FAlgiers",
+            "domain": ".github.com",
+            "secure": true
+        },
+        {
+            "name": "_octo",
+            "value": "GH1.1.870685090.1776524199",
+            "domain": ".github.com",
+            "secure": true
+        },
+        {
+            "name": "_gh_sess",
+            "value": "%2BDM28vbV9o1rAsn%2BSZXPfpgllRf3BmNcmdDScGbU%2BTwpnCdq9W%2BWvO8SpyaE7dKnlf0UWLxbeLyOhW6zccwJMKS3yW3D6K9TNDK3SBK1y4qx3NPDtVfHmez8a3hZPNsB9uYtriFTFurVM1poAKSRJcNwidEP7U6hc3DSmieh2pDZltx8z7umVnGhK9dxH%2F8vE1NyA1EpuHPchtyP77wZV3%2Fj8ndbbhjXqQ4ARvNXHnjoIvkd9TQYC6F9azQ%2BCmfpORnKZnfK8Dmr%2F5dmbXUUEw%3D%3D--tEaumInc%2BuQYL8yw--LgDxbSQclPlD93WdFvS5OA%3D%3D",
+            "domain": "github.com",
+            "secure": true
+        },
+        {
+            "name": "logged_in",
+            "value": "no",
+            "domain": ".github.com",
+            "secure": true
+        }
+    ],
+    "downloaded_files": [],
+    "page_title": "GitHub \u00b7 Change is constant. GitHub keeps you ahead. \u00b7 GitHub",
+    "screenshot": "shot.png",
+    "scan_duration": 11.57,
+    "meta": {
+        "sandbox_id": "sandbox-37172d05",
+        "scan_timestamp": "2026-04-18T14:56:47.757094+00:00",
+        "sandbox_exited_cleanly": true
+    }
+}
