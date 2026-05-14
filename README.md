@@ -1,4 +1,4 @@
-# 🛡️ Malicious URL Detection Sandbox:
+# 🛡️ Malicious URL Detection Sandbox
 
 ![Python](https://img.shields.io/badge/Python-3.12+-1a1a2e?style=for-the-badge&logo=python&logoColor=f5a623)
 ![Docker](https://img.shields.io/badge/Docker-Required-1a1a2e?style=for-the-badge&logo=docker&logoColor=f5a623)
@@ -13,38 +13,47 @@
 
 ---
 
-##  Demo Video
+## ▶️ Demo Video
 
-[▶ Watch the Full Demo](https://www.youtube.com/watch?v=DAkPTsAi1RQ)
+[Watch the Full Demo](https://www.youtube.com/watch?v=DAkPTsAi1RQ)
 
 ---
 
 ## 📄 Report
-[Read the Full Report](./REPORT.pdf)
+
+[Read the Full Project Report](./REPORT.pdf)
 
 ---
 
+## 🖼️ Preview
 
-##  Preview
+![Dashboard Preview](https://github.com/user-attachments/assets/c82663fc-0017-421a-8761-1c50e5c1ba7a)
 
-<img width="1915" height="951" alt="Website" src="https://github.com/user-attachments/assets/e07f5a50-c955-4c66-a08c-4d1e0b8568ab" />
-
-<table>
-<tr>
-<td align="center"><strong>🟢 Clean Case</strong></td>
-<td align="center"><strong>🔴 Malicious Case</strong></td>
-<td align="center"><strong>🔴 Malicious Case (Detail)</strong></td>
-</tr>
-<tr>
-<td><img width="576" src="https://github.com/user-attachments/assets/b3165506-8011-4839-9c6c-b192feba5526" /></td>
-<td><img width="556" src="https://github.com/user-attachments/assets/ffabed52-1384-48a9-a46c-0073d881f1d7" /></td>
-<td><img width="551" src="https://github.com/user-attachments/assets/47c6c8b5-de33-4c03-9efb-5e30f6da1c46" /></td>
-</tr>
-</table>
+| 🟢 Clean Case | 🔴 Malicious Case | 🔴 Malicious Case (Detail) |
+|:---:|:---:|:---:|
+| ![Clean](https://github.com/user-attachments/assets/3dc827af-abe4-489d-9a20-d1f5ecc3726f) | ![Malicious](https://github.com/user-attachments/assets/ffabed52-1384-48a9-a46c-0083d881f1d7) | ![Detail](https://github.com/user-attachments/assets/b74ffcc4-75b6-429a-9cc7-f6a251a3e909) |
 
 ---
 
-##  Requirements
+## ⚙️ How It Works
+
+The system runs a two-part pipeline:
+
+```
+URL Input ──► Browser (Playwright) ──► evidence.json ──► Analysis Pipeline ──► Verdict
+```
+
+**Pipeline 1 — Evidence Collection**
+Visits the URL in a headless Chromium browser, hooks JavaScript functions (`eval`, `document.write`, form submissions), logs every network request, verifies TLS, and records any file downloads.
+
+**Pipeline 2 — Threat Analysis**
+Queries VirusTotal, AbuseIPDB, and URLhaus, applies 16 heuristic detection rules, and produces a final risk score.
+
+> Every scan runs inside a fresh Docker container — the host machine is never exposed.
+
+---
+
+## 📋 Requirements
 
 - Python 3.12+
 - Docker Desktop — must be running
@@ -52,7 +61,7 @@
 
 ---
 
-##  Setup
+## 🚀 Setup
 
 ```bash
 # Install dependencies
@@ -71,7 +80,7 @@ mkdir output
 
 ---
 
-##  Run
+## ▶️ Run
 
 ```bash
 python app.py
@@ -81,25 +90,7 @@ Open **http://127.0.0.1:5000** in your browser.
 
 ---
 
-##  How It Works
-
-The system runs a two-part pipeline:
-
-```
-URL Input ──► Browser (Playwright) ──► evidence.json ──► Analysis Pipeline ──► Verdict
-```
-
-**Pipeline 1 — Evidence Collection**
-Visits the URL in a headless Chromium browser, hooks JavaScript functions (`eval`, `document.write`, form submissions), logs every network request, verifies TLS, and records any file downloads.
-
-**Pipeline 2 — Threat Analysis**
-Queries VirusTotal, AbuseIPDB, and URLhaus, applies 16 heuristic detection rules, and produces a final risk score.
-
-**Every scan runs inside a fresh Docker container — the host machine is never exposed.**
-
----
-
-##  How to Use
+## 🔍 How to Use
 
 1. Paste any URL into the input field
 2. Click **Scan URL**
@@ -116,7 +107,7 @@ Queries VirusTotal, AbuseIPDB, and URLhaus, applies 16 heuristic detection rules
 
 ---
 
-##  Project Structure
+## 🗂️ Project Structure
 
 | File | Role |
 |---|---|
@@ -135,7 +126,7 @@ Queries VirusTotal, AbuseIPDB, and URLhaus, applies 16 heuristic detection rules
 
 ---
 
-##  Live Test Result
+## 🧪 Live Test Result
 
 Tested on a Netflix phishing clone — verdict: **SUSPICIOUS 55/100**
 
@@ -150,4 +141,4 @@ Tested on a Netflix phishing clone — verdict: **SUSPICIOUS 55/100**
 
 ---
 
-> 📚 Network & System Security — April 2026
+> 📚 Network & System Security — ENSIA, April 2026
