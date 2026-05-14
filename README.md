@@ -1,4 +1,4 @@
-# 🛡️ Malicious URL Detection Sandbox
+# 🛡️ Malicious URL Detection Sandbox :
 
 ![Python](https://img.shields.io/badge/Python-3.12+-1a1a2e?style=for-the-badge&logo=python&logoColor=f5a623)
 ![Docker](https://img.shields.io/badge/Docker-Required-1a1a2e?style=for-the-badge&logo=docker&logoColor=f5a623)
