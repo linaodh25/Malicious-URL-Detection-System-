@@ -31,7 +31,10 @@
 
 | 🟢 Clean Case | 🔴 Malicious Case | 🔴 Malicious Case (Detail) |
 |:---:|:---:|:---:|
-| ![Clean](https://github.com/user-attachments/assets/3dc827af-abe4-489d-9a20-d1f5ecc3726f) | ![Malicious](https://github.com/user-attachments/assets/ffabed52-1384-48a9-a46c-0083d881f1d7) | ![Detail](https://github.com/user-attachments/assets/b74ffcc4-75b6-429a-9cc7-f6a251a3e909) |
+| ![Clean](https://github.com/user-attachments/assets/3dc827af-abe4-489d-9a20-d1f5ecc3726f) | 
+![Malicious]![Uploading image.png…]()
+ |
+![Detail](https://github.com/user-attachments/assets/b74ffcc4-75b6-429a-9cc7-f6a251a3e909) |
 
 ---
 
